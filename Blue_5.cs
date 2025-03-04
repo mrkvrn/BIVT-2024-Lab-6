@@ -85,7 +85,7 @@ namespace Lab_6
                     int top_place = 18;
                     for (int i = 0; i < _sportsmen.Length; i++)
                     {
-                        if (_sportsmen[i].Place < top_place) top_place = _sportsmen[i].Place;
+                        if (_sportsmen[i].Place < top_place && _sportsmen[i].Place > 0) top_place = _sportsmen[i].Place;
                     }
                     return top_place;
                 }
@@ -139,7 +139,11 @@ namespace Lab_6
             }
             public void Print()
             {
-                Console.WriteLine($"Team: {_name}, SummaryScore: {SummaryScore}, TopPlace: {TopPlace}");
+                for (int i = 0; i < _sportsmen.Length; i++)
+                {
+                    Console.WriteLine($"Team: {_name}, SummaryScore: {SummaryScore}, TopPlace: {TopPlace}");
+                }
+                
             }
         }
     }
