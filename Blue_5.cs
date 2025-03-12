@@ -45,19 +45,7 @@ namespace Lab_6
             private int index;
 
             public string Name => _name;
-            public Sportsman[] Sportsmen
-            {
-                get
-                {
-                    if (_sportsmen == null) return null;
-                    Sportsman[] sportsmen = new Sportsman[_sportsmen.Length];
-                    for (int i = 0; i < _sportsmen.Length; i++)
-                    {
-                        sportsmen[i] = _sportsmen[i];
-                    }
-                    return sportsmen;
-                }
-            }
+            public Sportsman[] Sportsmen => _sportsmen;
 
             public int SummaryScore
             {
