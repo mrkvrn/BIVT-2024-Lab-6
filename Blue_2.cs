@@ -13,6 +13,7 @@ namespace Lab_6
             private string _name;
             private string _surname;
             private int[,] _marks;
+            private int _count;
 
             public string Name => _name;
             public string Surname => _surname;
@@ -57,22 +58,17 @@ namespace Lab_6
                 _name = name;
                 _surname = surname;
                 _marks = new int[,] { { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 } };
+                _count = 0;
             }
 
             public void Jump(int[] result)
             {
-                if (_marks == null || _marks.GetLength(0) == 0 || result == null || result.Length == 0) return;
-                for (int i = 0; i < 2; i++)
+                if (_marks == null || _marks.GetLength(0) == 0 || result == null || result.Length == 0 || _count > 1) return;
+                for (int i = 0; i < 5; i++)
                 {
-                    if (_marks[i, 0] == 0)
-                    {
-                        for (int j = 0; j < 5; j++)
-                        {
-                            _marks[i, j] = result[j];
-                        }
-                        return;
-                    }
+                    _marks[_count, i] = result[i];
                 }
+                _count++;
             }
 
             public static void Sort(Participant[] array)
