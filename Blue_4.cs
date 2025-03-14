@@ -145,7 +145,7 @@ namespace Lab_6
                 }
                 while (j < half)
                 {
-                    group3.Add(group1.Teams[j]);
+                    group3.Add(group2.Teams[j]);
                     j++;
                 }
                 return group3;
